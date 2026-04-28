@@ -1,0 +1,94 @@
+# primeiro semestre
+print("=====[PRIMEIRO SEMESTRE]=====")
+print("")
+CP1,CP2,CP3 = input("Insira notas das CP:").split()
+CP1 = float(CP1)
+CP2 = float(CP2)
+CP3 = float(CP3)
+
+CPS = [CP1, CP2, CP3]
+num = list(sorted(CPS))
+
+MCP1 = num[2]
+MCP2 = num[1]
+
+MCP1E2 = (MCP1 + MCP2)/2
+print(MCP1E2)
+
+SPR1,SPR2 = input("Insira notas da SPRINT:").split()
+SPR1 = float(SPR1)
+SPR2 = float(SPR2)
+
+mediaspr = (SPR1 + SPR2)/2
+
+print(mediaspr)
+
+print("Fez global solution? (Y/n)")
+str = input("# ").upper()
+if str == "Y":
+    GS1 = float(input("Insira a nota da Global Solution:"))
+    MS1 = 0.6 * GS1 + 0.2 * mediaspr + 0.2 * MCP1E2
+    print(f"Média Semestral 1: {MS1}")
+else:
+    SUB = float(input("Insira a nota da Substitutiva:"))
+    MS1 = 0.6 * SUB + 0.2 * mediaspr + 0.2 * MCP1E2
+    print(f"Média Semestral 1: {MS1}")
+
+# segundo semestre
+print("")
+print("=====[SEGUNDO SEMESTRE]=====")
+print("")
+CP12,CP22,CP32 = input("Insira notas das CP:").split()
+CP12 = float(CP12)
+CP22 = float(CP22)
+CP32 = float(CP32)
+
+CPS2 = [CP12, CP22, CP32]
+num2 = list(sorted(CPS2))
+
+MCP12 = num2[2]
+MCP22 = num2[1]
+
+MCP1E22 = (MCP12 + MCP22)/2
+print(MCP1E22)
+
+SPR12,SPR22 = input("Insira notas da SPRINT:").split()
+SPR12 = float(SPR12)
+SPR22 = float(SPR22)
+
+mediaspr2 = (SPR12 + SPR22)/2
+
+print(mediaspr2)
+
+print("Fez global solution? (Y/n)")
+str2 = input("# ").upper()
+if str2 == "Y":
+    GS12 = float(input("Insira a nota da Global Solution:"))
+    MS2 = 0.6 * GS12 + 0.2 * mediaspr2 + 0.2 * MCP1E22
+    print(f"Média Semestral 2: {MS2}")
+else:
+    SUB2 = float(input("Insira a nota da Substitutiva:"))
+    MS2 = 0.6 * SUB2 + 0.2 * mediaspr2 + 0.2 * MCP1E22
+    print(f"Média Semestral 2: {MS2}")
+
+# media final
+print("")
+print("=====[MÉDIA FINAL]=====")
+print("")
+MF = 0.4 * MS1 + 0.6 * MS2
+print(MF)
+if MF >= 6.0:
+    print("Aprovado")
+if MF >= 4.0 and MF < 6.0:
+    print("Exame")
+    print("Faltam " + MF - 10.0 + "pontos!")
+    EX = float(input("Insira nota do exame: "))
+    MFEX = (EX + MF) / 2
+    print(MFEX)
+
+    if MFEX > 6.0:
+        print("Aprovado")
+    if MFEX < 6.0:
+        print("Reprovado")
+if MF < 4.0:
+    print("Reprovado")
